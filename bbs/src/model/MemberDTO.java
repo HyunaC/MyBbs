@@ -8,7 +8,9 @@ public class MemberDTO {
 	private String pwd;
 	private String name;
 	private java.sql.Date regidate;
-	private String age;
+	private String gender;
+	private String inter;
+	private String grade;
 	//생성자
 	public MemberDTO() {}
 	public MemberDTO(String id, String pwd, String name, Date regidate, String age) {

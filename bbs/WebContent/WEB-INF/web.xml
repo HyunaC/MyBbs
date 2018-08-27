@@ -10,8 +10,17 @@
   	<servlet-name>BbsIndex</servlet-name>
   	<url-pattern>/Bbs/Index.do</url-pattern>
   </servlet-mapping>
-  
-   <servlet>
+  <!-- 회원가입 -->
+  <servlet>
+	<servlet-name>BbsIncludeMember</servlet-name> 
+	<servlet-class>controller.IncludeMemberController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>BbsIncludeMember</servlet-name>
+  	<url-pattern>/Bbs/IncludeMember.do</url-pattern>
+  </servlet-mapping>
+  <!-- 로그인 -->
+  <servlet>
 	<servlet-name>BbsLogin</servlet-name> 
 	<servlet-class>controller.LoginController</servlet-class>
   </servlet>
