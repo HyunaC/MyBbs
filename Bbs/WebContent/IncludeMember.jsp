@@ -1,10 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%
+     request.setCharacterEncoding("UTF-8");
+ %>
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
-    <title>Start Page</title>
+    <title>회원가입</title>
 
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -79,8 +83,8 @@
 				  <input type="checkbox" id="inter" name="inter" value="ent" > 연예
 				</label>
 			  </div>
-			  <div name="grade" class="col-sm-5">
-				  <select class="form-control">
+			  <div class="col-sm-5">
+				  <select class="form-control" name="grade">
 					  <option value="">==학력을 선택하세요==</option>
                       <option value="ele">초등학교</option>
                       <option value="mid">중학교</option>

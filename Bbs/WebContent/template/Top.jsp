@@ -52,10 +52,11 @@
 
                         <ul class="flex-lg flex-lg-row justify-content-lg-center align-content-lg-center">
                             <li class="current-menu-item"><a href="index.html">Home</a></li>
-                            <li><a href="#">Login</a></li>
-                            <li><a href="#">Sign up</a></li>
-                            <li><a href="#">Bulletin</a></li>
-                            <li><a href="#">My Page</a></li>
+                            
+                            <li><a href="<c:url value='/Login.jsp'/>">Login</a></li>
+                            <li><a href="<c:url value='/IncludeMember.jsp'/>">Sign up</a></li>
+                            <li><a href="<c:url value='/List.jsp'/>">Bulletin</a></li>
+                            <li><a href="<c:url value='/MyPage.jsp'/>">My Page</a></li>
                             <li><a href="#">Q&A</a></li>
                         </ul>
 

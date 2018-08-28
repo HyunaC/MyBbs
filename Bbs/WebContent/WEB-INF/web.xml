@@ -2,6 +2,20 @@
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
   <display-name>Bbs</display-name>
   
+   <!-- 컨텍스트 초기화 파라미터 등록 -->
+  <context-param>
+  	<param-name>ORACLE_URL</param-name>
+  	<param-value>jdbc:oracle:thin:@localhost:1521:orcl</param-value>
+  </context-param>
+  <context-param>
+  	<param-name>ORACLE_DRIVER</param-name>
+  	<param-value>oracle.jdbc.OracleDriver</param-value>
+  </context-param>
+  <context-param>
+  	<param-name>JNDI_ROOT</param-name>
+  	<param-value>java:comp/env</param-value>
+  </context-param>
+  
   <servlet>
 	<servlet-name>BbsIndex</servlet-name> 
 	<servlet-class>controller.IndexController</servlet-class>

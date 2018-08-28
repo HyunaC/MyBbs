@@ -50,18 +50,18 @@ public class BbsDAO {
 		catch (Exception e) {e.printStackTrace();}
 	}//////////////////////
 	//회원여부 판단용]
-	public boolean isMember(String user,String pass) {
-		String sql="SELECT pwd FROM member WHERE id=? pwd=?";
+	public boolean isMember(MemberDTO dto) {
+		String sql="SELECT pwd FROM bbsmember WHERE id=? pwd=?";
 		try {
 			psmt = conn.prepareStatement(sql);
-			psmt.setString(1,user);
-			psmt.setString(2, pass);
+			psmt.setString(1,dto.getId());
+			psmt.setString(2, dto.getPwd());
 			rs = psmt.executeQuery();
 			if(rs.next()) {
 				String goodHash = rs.getString(1);				
 				boolean flag=false;
 				try {
-					flag = PBKDF2.validatePassword(pass, goodHash);
+					flag = PBKDF2.validatePassword(dto.getPwd(), goodHash);
 				} 
 				catch (Exception e) {e.printStackTrace();}
 				if(flag) {
@@ -76,6 +76,24 @@ public class BbsDAO {
 			return false;
 		}
 	}////////////////////////////
+	//회원가입]
+	public int signup(MemberDTO dto) {
+		int affected=0;
+		String sql="INSERT INTO bbsmember(id,pwd,name,gender,inter,grade) VALUES(?,?,?,?,?,?)";
+		try {
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, dto.getId());
+			psmt.setString(2, dto.getPwd());
+			psmt.setString(3, dto.getName());
+			psmt.setString(4, dto.getGender());
+			psmt.setString(5, dto.getInter());
+			psmt.setString(6, dto.getGrade());
+			affected = psmt.executeUpdate();
+			
+		}
+		catch(SQLException e) {e.printStackTrace();}		
+		return affected;
+	}///////////////////
 	//전체 목록 가져오기]
 	/*
 	 * 페이징 로직 추가하기
